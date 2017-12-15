@@ -28,7 +28,7 @@ public class Student extends Member {
 	@Override
 	// set the flag if there will be child class
 	public String toString(boolean flag) {
-		return (flag ? "STU " : "") + String.format("%s %s %1.2f %s", super.toString(false), major, GPA, sport);
+		return (flag ? "STU " : "") + String.format("%s %15s %1.2f %15s", super.toString(false), major, GPA, sport);
 	}
 
 	@Override

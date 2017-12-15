@@ -137,11 +137,11 @@ public class Proj1 {
 	private static void showMembers() {
 		System.out.println("Here are the Array and Vector:\nArray:");
 		for (Member member : memberArray) {
-			System.out.println(member.toString());
+			System.out.println(member.toString(true));
 		}
 		System.out.println("\nVector:");
 		for (Member member : memberVector) {
-			System.out.println(member.toString());
+			System.out.println(member.toString(true));
 		}
 	}
 

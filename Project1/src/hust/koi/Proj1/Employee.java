@@ -19,7 +19,7 @@ public class Employee extends Member {
 
 	@Override
 	public String toString(boolean flag) {
-		return (flag ? "EMP " : "") + String.format("%s %s %d", super.toString(false), department, yearHired);
+		return (flag ? "EMP " : "") + String.format("%s %36s %15s %4d", super.toString(false), "", department, yearHired);
 	}
 
 	@Override
@@ -29,7 +29,8 @@ public class Employee extends Member {
 
 	@Override
 	public String htmlColumns() {
-		return super.htmlColumns() + String.format("<TD></TD><TD></TD><TD></TD><TD>%s</TD><TD>%2d</TD>", department, yearHired);
+		return super.htmlColumns()
+				+ String.format("<TD></TD><TD></TD><TD></TD><TD>%s</TD><TD>%2d</TD>", department, yearHired);
 	}
 
 }

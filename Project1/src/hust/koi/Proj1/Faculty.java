@@ -14,7 +14,7 @@ public class Faculty extends Employee {
 
 	@Override
 	public String toString(boolean flag) {
-		return (flag ? "FAC " : "") + String.format("%s %s %s", super.toString(false), degreeHeld, position);
+		return (flag ? "FAC " : "") + String.format("%s %10s %15s", super.toString(false), degreeHeld, position);
 	}
 
 	@Override
