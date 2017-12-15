@@ -56,19 +56,19 @@ public class Proj2 {
 				generate();
 				break;
 			case 'S':
-				sort();
+				listStack();
 				break;
-			case 'V':
-				showMembers();
+			case 'Q':
+				listQueue();
 				break;
 			case 'O':
-				saveAsHTML();
+				listSortedQueue();
 				break;
-			case 'F':
-				showRawHTML();
+			case 'D':
+				delete();
 				break;
-			case 'L':
-				openHTML();
+			case 'I':
+				randomInsert();
 				break;
 			case 'H':
 				showMenu();
@@ -80,6 +80,41 @@ public class Proj2 {
 				break;
 			}
 		}
+	}
+
+	private static void close() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void randomInsert() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void delete() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void listSortedQueue() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void listQueue() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void listStack() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void generate() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	private static void showMenu() {
