@@ -57,10 +57,9 @@ The contributions rank from 0 to 5, zero mean no contribution and 5 means you ha
    The evaluation should look like his:
 
 
-                 |          Contributions
-                 |  1  |  2 |  3  | ........     |  8 |
-
-John Doe | ....  |  2  |  4 |  4  | ........     | 3  |
+                     |          Contributions
+                     |  1  |  2 |  3  | ........     |  8 |
+    John Doe | ....  |  2  |  4 |  4  | ........     | 3  |
 
 
 
