@@ -1,0 +1,7 @@
+rm Client.class
+javac Client.java
+
+java Client &
+java Client &
+java Client &
+
