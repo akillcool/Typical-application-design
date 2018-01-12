@@ -1,7 +1,7 @@
 // package chatroom
 //
 import java.io.ObjectOutputStream;
-import java.io.Serializable;;
+import java.io.Serializable;
 import java.util.StringTokenizer;
 
 public class Visitor implements Comparable<Visitor>, Serializable {
