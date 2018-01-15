@@ -1,4 +1,3 @@
-package hust.koi.Proj1;
 
 public class Faculty extends Employee {
 

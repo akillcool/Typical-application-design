@@ -1,4 +1,3 @@
-package hust.koi.Proj1;
 
 import java.awt.Desktop;
 import java.io.File;
