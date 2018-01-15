@@ -1,11 +1,9 @@
 package com.teacher.servlet;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -20,9 +18,7 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.JasperRunManager;
-import net.sf.jasperreports.engine.util.JRLoader;
 
 /**
  * Servlet implementation class ReportServlet
@@ -51,7 +47,7 @@ public class ReportServlet extends HttpServlet {
 			ServletOutputStream outputStream = response.getOutputStream();
 			String printfileName=JasperFillManager.fillReportToFile(servletContext.getRealPath("/reports/Report.jasper"), null,JdbcUtils_C3P0.getConnection());
 			// export pdf file
-			String pathFile="D://"+"report"+System.currentTimeMillis()+".pdf";
+			String pathFile="/root/tempjasperdocs"+"report"+System.currentTimeMillis()+".pdf";
 			JasperExportManager.exportReportToPdfFile(printfileName,pathFile);
 			
 			//html file
@@ -87,7 +83,7 @@ public class ReportServlet extends HttpServlet {
 	
 	public static void main(String[] args) throws JRException {
 		
-		JasperCompileManager.compileReportToFile("C://Users/hp/Desktop/report.jrxml");
+		JasperCompileManager.compileReportToFile("/root/tempjasperdocs");
 	}
 
 }

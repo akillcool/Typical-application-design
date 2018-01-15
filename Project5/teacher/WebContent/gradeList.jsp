@@ -33,10 +33,11 @@
         {
         	searchForm.action="ReportServlet";
         }
-        function changeScore(id,score)
+        function changeScore(id)
         {
         	var takeId=id;
-        	var score=score;
+        	var input=document.getElementById("scoreValue")
+        	var score=input.value;
         	
         	window.href="ChangeScoreServlet? takeId="+id+"score ="+score;
         	
@@ -103,7 +104,7 @@
 									<td>${grade.sName}</td>
 									<td>${grade.semester}</td>
 									<td>${grade.year}</td>
-									<td><input type="text" style="width:40px" name="score" onblur="changeScore(${grade.takeId },${grade.score})" value="${grade.score}"></td>
+									<td><input type="text" id="scoreValue" style="width:40px" name="score" onblur="changeScore(${grade.takeId })" value="${grade.score}"></td>
 									<td>${grade.time}</td>
 								</tr>
 								 

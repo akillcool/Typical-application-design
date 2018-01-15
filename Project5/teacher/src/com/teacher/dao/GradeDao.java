@@ -34,7 +34,8 @@ public class GradeDao {
 		
 		//create offer
 		Offer offer=new Offer();
-		offer.setOfferId(Integer.parseInt(WebUtils.makeId()));
+		int id =(int)System.currentTimeMillis();
+		offer.setOfferId(id);
 		offer.setCourseId(grade.getCourseId());
 		offer.setTeacherId(grade.getTeacherId());
 		offer.setYear(grade.getYear());

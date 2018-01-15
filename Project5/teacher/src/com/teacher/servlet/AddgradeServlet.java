@@ -33,7 +33,8 @@ public class AddgradeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Grade grade = WebUtils.request2Bean(request, Grade.class);
-		grade.setTakeId(Integer.parseInt(WebUtils.makeId()));
+		int id=(int)System.currentTimeMillis();
+		grade.setTakeId(id);
 		try {
 			gradeService.addGrade(grade);
 			request.getRequestDispatcher("GradeServlet").forward(request, response);
