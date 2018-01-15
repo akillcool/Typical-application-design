@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class TestHashTable {
+public class Proj3 {
 
   static Scanner scan = new Scanner(System.in);
   static ShowClass sc = new ShowClass();
