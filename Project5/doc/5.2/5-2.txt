@@ -1,0 +1,37 @@
+
+Column&table         constraint              data type      corresponding entity
+
+Course table                                                /Project5/teacher/src/com/teacher/pojo/Course.java
+Courseid:            PRIMARY KEY             int(11)        course.courseId
+name:                NOT NULL , UNIQUE       varchar(45)    course.cName
+advanced placement:  no constraint           varchar(45)    course.advancedPlacement
+academic credit:     CHECK                   varchar(5)     course.elective
+elective:            NOT NULL,CHECK          varchar(45)    course.category
+category:            NOT NULL,CHECK          varchar(45)    course.schoolHours
+school hours:        CHECK                   int(11)        course.schoolHours
+
+Offering table                                              /Project5/teacher/src/com/teacher/pojo/Offer.java
+Offeringid:          PRIMARY KEY             int(11)        Offer.offerId
+Courseid:            FOREIGN KEY             int(11)        Course.courseId
+Teacherid:           FOREIGN KEY             int(11)        teacher.teacherId
+year:                NOT NULL,CHECK          varchar(45)    Offer.year
+semester:            NOT NULL,CHECK          varchar(45)    Offer.semester
+
+Teacher table                                               /Project5/teacher/src/com/teacher/pojo/Teacher.java
+Teacherid:           PRIMARY KEY             int(11)        teacher.teacherId
+name:                NOT NULL                varchar(45)    teacher.tName
+gender:              NOT NULL,CHECK          varchar(10)    teacher.gender
+age:                 CHECK                   int(11)        teacher.age
+
+Student table                                               /Project5/teacher/src/com/teacher/pojo/Student.java 
+Studentid:           PRIMARY KEY             int(11)        student.studentId
+name:                NOT NULL                varchar(45)    student.sName
+gender:              NOT NULL,CHECK          varchar(10)    student.gender
+age:                 CHECK                   int(11)        student.age
+
+Take table                                                  /Project5/teacher/src/com/teacher/pojo/Take.java 
+Takeid:              PRIMARY KEY             int(11)        Take.takeId
+Studentid:           FOREIGN KEY             int(11)        student.studentId
+Offeringid:          FOREIGN KEY             int(11)        Offer.offerId
+time:                CHECK                   varchar(45)    Take.time
+score:               CHECK                   double         Take.score
