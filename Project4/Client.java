@@ -52,6 +52,16 @@ public class Client extends JApplet {
     JPanel plWest = new JPanel(new BorderLayout());
     TitledBorder plGroupsTitledBorder = new TitledBorder("Groups");
 
+    JLabel agentAddGroupLb = new JLabel("Please enter an group name to go on, agent!");
+    JTextField tfGroupName = new JTextField(20);
+    JButton btnLgoin = new JButton("login");
+
+    static String loginTitle = "Agent login";
+
+
+    JPanel plLogin = new JPanel();
+
+
     Socket chatSocket = null;
 
     boolean privateMessage = false;
@@ -76,6 +86,10 @@ public class Client extends JApplet {
 
     public Client() {
     }
+
+    /**
+     * init the main view
+     */
 
     public void init() {
         sclEast.getViewport().add(plVisitors);
@@ -143,6 +157,7 @@ public class Client extends JApplet {
         makeConnection();
         tfNameMsg[0].setText(Names.visitors[rnd.nextInt(Names.visitors.length)]);
     }
+
 
     public void stop() {
         try {
@@ -276,7 +291,7 @@ public class Client extends JApplet {
         } catch (IOException e) {
             e.printStackTrace();
         }
-	/*
+    /*
 	   Thread thr = new ClientSender( out, message);
 	   thr.start() ;
 	   try { thr.join(); } catch (InterruptedException f )  { }
@@ -294,11 +309,12 @@ public class Client extends JApplet {
 
     public static void main(String arg[]) {
         clientWindow = new JFrame(titleStr);
-        // clientWindow.setBackground(Color.black);
+        clientWindow.setBackground(Color.black);
         applet = new Client();
+//        applet.loginPanel();
         applet.init();
         clientWindow.setTitle("Select a group");
-        //clientWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        clientWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         clientWindow.getContentPane().add(applet);
         clientWindow.setSize(small_width, frame_height);
 
@@ -546,6 +562,7 @@ public class Client extends JApplet {
 
                         case Message.GETGROUPS: // message: ( GETGROUP, null, group_list)
                             addAllGroups(message.others);  // group list is rececived.
+//                            System.out.println("get group from server"+message.others);
                             break;
 
                         case Message.ADDGROUP: // message: (ADDGROUP, new_group_info, group_list )
@@ -607,3 +624,5 @@ public class Client extends JApplet {
     }  // end of class CAgent, the client agent or receiver.
 
 } // end of class Client
+
+
