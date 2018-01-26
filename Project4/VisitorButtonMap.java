@@ -6,7 +6,7 @@ import java.awt.Font;
 import java.util.HashMap;
 import java.util.Set;
 
-/** VisitorButtonMap class has two Hashmaps to provide easy access from RadoButton to Group
+/** VisitorButtonMap class has two Hashmaps to provide easy access from RadioButton to Group
   and from Group ID to Radio button.
  */
 class VisitorButtonMap {

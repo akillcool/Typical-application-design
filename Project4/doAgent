@@ -1,5 +1,0 @@
-rm Agent.class
-
-javac Agent.java
-
-java Agent

@@ -46,14 +46,14 @@ public class VGroup implements Serializable {
 	return true;
     }
 
-    // Make sure that the count is the same as size of visitors ineach group.
+    // Make sure that the count is the same as size of visitors in each group.
     public void synchronize() {
        Group grp;
        for ( int i = 0; i < size() ; i ++ ) {
 	  grp = get(i); grp.count = grp.size();
        }
     }
-    // List vgroup in short-form.
+    // List VGroup in short-form.
     public String toString() { 
 	StringBuffer buf = new StringBuffer(); 
 	int size = vgroup.size() - 1;
@@ -74,18 +74,7 @@ public class VGroup implements Serializable {
     public void add(String grpList ) { 
 	StringTokenizer tzer = new StringTokenizer(grpList, ";");
 	while ( tzer.hasMoreTokens() )  vgroup.add( Group.toGroup( tzer.nextToken()));
-	/*
-	String gName;
-	int    gID, i = 0;
-	while ( tzer.hasMoreTokens() ) {
-	    gName = new String( tzer.nextToken() );
-	    gID  = Integer.parseInt( tzer.nextToken() );
-	    tzer.nextToken();  // get the number of visitors
-	    vgroup.add( new Group( gID, gName ));
-	}
-    */
     }
-
 
     public void broadcast( Message addOrRmGrpMsg ) {
 	int msgType = addOrRmGrpMsg.type;
